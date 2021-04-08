@@ -14,6 +14,7 @@ import com.Rafa.Entidades.Loguin;
 import com.Rafa.Entidades.Usuario;
 import com.Rafa.negocio.clsLoguin;
 
+
 /**
  * Servlet implementation class controllerAcceso
  */
@@ -60,7 +61,7 @@ public class controllerAcceso extends HttpServlet {
 			System.out.println("Bienvenido");
 			ClsUsuarios cls = new ClsUsuarios();
 			ArrayList<Usuario> lista= cls.MostrarUsuario();
-			for(var i: lista) {
+			for(var i : lista) {
 				
 				System.out.println(i.getUsuario() +" " + i.getPassWord());
 			}

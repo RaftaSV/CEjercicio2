@@ -48,5 +48,19 @@ public class ClsUsuarios {
 		
 		
 	}
+	
+	public void Actualizar(Usuario usu) {
+		
+		try {
+			CallableStatement consulta = coneccion.prepareCall("call SP_U_USUARIOS (?,?,?)");
+			consulta.setInt("pUsuario", usu.getIdUsuario());
+			consulta.execute();
+			System.out.println("exito");
+			coneccion.close();
+		} catch (Exception e) {
+			System.out.println("error");
+			
+		}
+	}
 
 }

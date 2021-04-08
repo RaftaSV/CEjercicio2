@@ -34,12 +34,28 @@ public class ControllerMostrarInformacion extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		ClsUsuarios cls = new ClsUsuarios();
-		Usuario usu = new Usuario();
+		String evaluar = request.getParameter("Eliminar");
 		
-		usu.setIdUsuario(Integer.parseInt(request.getParameter("usu")));
-		cls.Eliminar(usu);
-		response.sendRedirect("Saludo.jsp");
+		
+		String agregando = request.getParameter("Guardar");		
+		String idUsuario = request.getParameter("IdUsuario");		
+		String usuario = request.getParameter("Usuario");
+		String pass = request.getParameter("Pass");
+		
+		Usuario usu = new Usuario();
+		ClsUsuarios cls = new ClsUsuarios();
+		
+		
+		if(evaluar!= null) {
+			
+			if(evaluar.equals("btne")) {			
+				usu.setIdUsuario(Integer.parseInt(request.getParameter("usu")));
+				cls.Eliminar(usu);
+				response.sendRedirect("Saludo.jsp");
+			}
+			
+		}
+		
 	}
 
 	/**

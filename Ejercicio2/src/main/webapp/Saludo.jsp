@@ -42,8 +42,9 @@
 					<td> ${item.idUsuario} </td>
 				    <td> ${item.Usuario} </td>
 					<td> ${item.PassWord} </td>
-					<td> <button type="button" class="btn btn-warning">Editar</button> 
-					<a href="ControllerMostrarInformacion?usu=${item.idUsuario}" class="btn btn-danger"> Eliminar </a> </td>
+					<a href="ControllerMostrarInformacion?usu=${item.idUsuario}&Eliminar=btne" class="btn btn-danger"> Eliminar </a> 
+					<a href="add.jsp?Id=${item.idUsuario}&Usu=${item.Usuario}&Pass=${item.PassWord}" class="btn btn-warning"> Actualizar </a> 
+					</td>
 
 				</tr>
 				`
