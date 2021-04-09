@@ -54,6 +54,8 @@ public class ClsUsuarios {
 		try {
 			CallableStatement consulta = coneccion.prepareCall("call SP_U_USUARIOS (?,?,?)");
 			consulta.setInt("pUsuario", usu.getIdUsuario());
+			consulta.setString("pUsuario", usu.getUsuario());
+			consulta.setString("pPass", usu.getPassWord());
 			consulta.execute();
 			System.out.println("exito");
 			coneccion.close();
