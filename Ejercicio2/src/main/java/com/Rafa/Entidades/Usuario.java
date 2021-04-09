@@ -7,7 +7,20 @@ import lombok.Data;
 	    private int idUsuario;
 	    private String Usuario;
 	    private String PassWord;
-		public int getIdUsuario() {
+	    public int tipo;
+	    
+	    
+		public int getTipo() {
+			return tipo;
+		}
+
+		public void setTipo(int tipo) {
+			this.tipo = tipo;
+		}
+
+		public int getIdUsuario() 
+		
+		{
 			return idUsuario;
 		}
 		

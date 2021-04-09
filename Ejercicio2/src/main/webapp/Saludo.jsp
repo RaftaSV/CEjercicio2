@@ -20,7 +20,10 @@
 
 </head>
 <body>
-	<h1>WELLCOME</h1>
+	<h1>USUARIOS</h1>
+	<br>
+	<a href="add.jsp"  class="btn btn-primary"> Agregar </a>
+	
 	<script type="text/javascript">
 	
 	$(document).ready(function(){
@@ -42,6 +45,7 @@
 					<td> ${item.idUsuario} </td>
 				    <td> ${item.Usuario} </td>
 					<td> ${item.PassWord} </td>
+					<td>
 					<a href="ControllerMostrarInformacion?usu=${item.idUsuario}&Eliminar=btne" class="btn btn-danger"> Eliminar </a> 
 					<a href="add.jsp?Id=${item.idUsuario}&Usu=${item.Usuario}&Pass=${item.PassWord}" class="btn btn-warning"> Actualizar </a> 
 					</td>
@@ -57,6 +61,7 @@
 	});
 	
 	</script>
+	
 	<table class="table table-dark" id="tablaDatos">
 		<thead>
 			<th>ID</th>

@@ -8,24 +8,24 @@
 </head>
 <body>
 <%
-String Id = request.getParameter("IdUsuario");
-String Usuario = request.getParameter("Usuario");
-String Pass = request.getParameter("Pass");
+String Id = request.getParameter("Id");
+String Usuario = request.getParameter("Usu");
+String Password = request.getParameter("Pass");
 
-if(Id==null){
+if(Id==null||Id==""){
 	
 	Id="";
 	Usuario="";
-	Pass="";
+	Password="";
 	
 }
 %>
 <form action="ControllerMostrarInformacion" method = "get">
-<input type="hidden" value="<%=Id %> " name="IdUsuario">
+<input type="hidden" value= <%=Id %>  name="IdUsuario">
 <label> Usuario </label>
-<Input type="text" value = "<%=Usuario %>" name ="usuario">
+<Input type="text" value = "<%=Usuario %>" name ="Usuario">
 <label> Password </label>
-<Input type="text" value = "<%=Pass %>" name ="pass">
+<Input type="text" value = "<%=Password %>" name ="Pass">
 <button name="Guardar" value="btna">Guardar</button>
 </form>
 </body>

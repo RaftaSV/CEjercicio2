@@ -41,7 +41,7 @@ public class ClsUsuarios {
 			System.out.println("exito");
 			coneccion.close();
 		} catch (Exception e) {
-			System.out.println("error");
+			System.out.println("error" );
 			
 		}
 		
@@ -52,10 +52,27 @@ public class ClsUsuarios {
 	public void Actualizar(Usuario usu) {
 		
 		try {
-			CallableStatement consulta = coneccion.prepareCall("call SP_U_USUARIOS (?,?,?)");
-			consulta.setInt("pUsuario", usu.getIdUsuario());
+			CallableStatement consulta = coneccion.prepareCall("call SP_U_USUARIOS (?,?,?,?)");
+			consulta.setInt("pId", usu.getIdUsuario());
 			consulta.setString("pUsuario", usu.getUsuario());
 			consulta.setString("pPass", usu.getPassWord());
+			consulta.setInt("pTipo", usu.getTipo());
+			consulta.execute();
+			System.out.println("exito");
+			coneccion.close();
+		} catch (Exception e) {
+			System.out.println("error" + e);
+			
+		}
+	}
+	
+	public void Insertar(Usuario usu) {
+		
+		try {
+			CallableStatement consulta = coneccion.prepareCall("call SP_I_Usuario (?,?,?)");
+			consulta.setString("pUsu", usu.getUsuario());
+			consulta.setString("pPass", usu.getPassWord());
+			consulta.setInt("pTipo", usu.getTipo());
 			consulta.execute();
 			System.out.println("exito");
 			coneccion.close();
@@ -63,6 +80,8 @@ public class ClsUsuarios {
 			System.out.println("error");
 			
 		}
+		
 	}
 
 }
+
