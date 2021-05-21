@@ -10,8 +10,38 @@
   	<description></description>
   	<servlet-class>com.Rafa.controladores.ControllerLogin</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ControllerAjax</servlet-name>
+  	<display-name>ControllerAjax</display-name>
+  	<description></description>
+  	<servlet-class>com.Rafa.controladores.ControllerAjax</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerFiles</servlet-name>
+  	<display-name>ControllerFiles</display-name>
+  	<description></description>
+  	<servlet-class>com.Rafa.controladores.ControllerFiles</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ControllerMostrarArchivos</servlet-name>
+  	<display-name>ControllerMostrarArchivos</display-name>
+  	<description></description>
+  	<servlet-class>com.Rafa.controladores.ControllerMostrarArchivos</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerLogin</servlet-name>
   	<url-pattern>/ControllerLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerAjax</servlet-name>
+  	<url-pattern>/ControllerAjax</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerFiles</servlet-name>
+  	<url-pattern>/ControllerFiles</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerMostrarArchivos</servlet-name>
+  	<url-pattern>/ControllerMostrarArchivos</url-pattern>
   </servlet-mapping>
 </web-app>

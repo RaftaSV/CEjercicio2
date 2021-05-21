@@ -55,7 +55,7 @@ public class ControllerMostrarInformacion extends HttpServlet {
 		} else if (agregando.equals("btna")) {
 			usu.setUsuario(usuario);
 			usu.setPassWord(pass);
-			usu.setTipo(1);
+			usu.setId(1);
 
 			if (idUsuario == null || idUsuario == "") {
 

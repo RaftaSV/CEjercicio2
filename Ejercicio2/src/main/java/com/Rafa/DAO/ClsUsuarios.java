@@ -17,14 +17,16 @@ public class ClsUsuarios {
 	public ArrayList<Usuario> MostrarUsuario() {
 		ArrayList<Usuario> lista = new ArrayList<>();
 		try {
-			CallableStatement st = coneccion.prepareCall("Select *from Usuario");
+			CallableStatement st = coneccion.prepareCall("select u.idUsuario, u.Usuario, u.PassWord,t.TipoUser from usuario as u inner join tipousuario as t where u.tipousuario = t.id");
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				Usuario U = new Usuario();
-				U.setIdUsuario(rs.getInt("idUsuario"));
-				U.setUsuario(rs.getString("Usuario"));
-				U.setPassWord(rs.getString("PassWord"));
+				U.setIdUsuario(rs.getInt("u.idUsuario"));
+				U.setUsuario(rs.getString("u.Usuario"));
+				U.setPassWord(rs.getString("u.password"));
+				U.setTipoUsuario(rs.getString("t.TipoUser"));
 				lista.add(U);
+				
 			}
 
 		} catch (Exception e) {
@@ -56,7 +58,7 @@ public class ClsUsuarios {
 			consulta.setInt("pId", usu.getIdUsuario());
 			consulta.setString("pUsuario", usu.getUsuario());
 			consulta.setString("pPass", usu.getPassWord());
-			consulta.setInt("pTipo", usu.getTipo());
+			consulta.setInt("pTipo", usu.getId());
 			consulta.execute();
 			System.out.println("exito");
 			coneccion.close();
@@ -72,7 +74,7 @@ public class ClsUsuarios {
 			CallableStatement consulta = coneccion.prepareCall("call SP_I_Usuario (?,?,?)");
 			consulta.setString("pUsu", usu.getUsuario());
 			consulta.setString("pPass", usu.getPassWord());
-			consulta.setInt("pTipo", usu.getTipo());
+			consulta.setInt("pTipo", usu.getId());
 			consulta.execute();
 			System.out.println("exito");
 			coneccion.close();

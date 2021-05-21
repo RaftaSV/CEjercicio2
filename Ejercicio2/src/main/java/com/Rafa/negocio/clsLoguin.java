@@ -39,7 +39,7 @@ public class clsLoguin {
 				usuario.setUsuario(resul.getString("Usuario"));
 				usuario.setPassWord(resul.getString("PassWord"));
 				usuario.setIdUsuario(resul.getInt("idUsuario"));
-			    usuario.setTipo(resul.getInt("tipoUsuario"));
+			    usuario.setId(resul.getInt("tipoUsuario"));
 				listaUsuariopass.add(usuario);
 			}
 
@@ -49,7 +49,7 @@ public class clsLoguin {
 			for (var i : listaUsuariopass) {
 				usuBase = i.getUsuario();
 				passBase = i.getPassWord();
-				tipo = i.getTipo();
+				tipo = i.getId();
 			}
 			CallableStatement call2 = coneccion.prepareCall("call SP_S_CRIP(?)");
 			call2.setString("PcripPass", log.getPass());
